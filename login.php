@@ -25,8 +25,8 @@
         <label for="email">Email</label>
         <input type="text" id="email" name="email" placeholder="Email">
         <label for="mdp">Mot de passe</label>
-        <input type="password" id="mdp" name="mdp" placeholder="mot de passe">
-        <input type="submit" value="Inscription">
+        <input type="password" id="mdp" name="password" placeholder="mot de passe">
+        <input type="submit" value="Connexion">
     </form>
 </body>
 

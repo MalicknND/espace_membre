@@ -30,6 +30,7 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.7);
 }
 
 label {
@@ -58,4 +59,17 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   background-color: #0056b3;
+}
+
+#error {
+  color: red;
+  text-align: center;
+  padding: 5px;
+  display: inline-block;
+}
+#success {
+  color: green;
+  text-align: center;
+  padding: 5px;
+  display: inline-block;
 }
