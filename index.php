@@ -1,4 +1,5 @@
 <?php
+session_start(); // On démarre la session AVANT toute chose
 require('src/database.php');
 
 if (!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['confirm_password'])) {
@@ -53,32 +54,39 @@ if (!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['pass
 </head>
 
 <body>
-    <h1>Inscription</h1>
-    <p>Si vous avez dèja un compte <a href="../espace_membre/login.php">Connectez-vous</a></p>
-
-
     <?php
-    if (isset($_GET['error'])) {
-        if (isset($_GET['pass'])) {
-            echo '<p id="error">Les mots de passe ne sont pas identiques</p>';
-        } else if (isset($_GET['email'])) {
-            echo '<p id="error">L\'adresse email est déjà utilisée</p>';
+    if (!isset($_SESSION['connect'])) { ?>
+        <h1>Inscription</h1>
+        <p>Si vous avez dèja un compte <a href="../espace_membre/login.php">Connectez-vous</a></p>
+
+
+        <?php
+        if (isset($_GET['error'])) {
+            if (isset($_GET['pass'])) {
+                echo '<p id="error">Les mots de passe ne sont pas identiques</p>';
+            } else if (isset($_GET['email'])) {
+                echo '<p id="error">L\'adresse email est déjà utilisée</p>';
+            }
+        } else if (isset($_GET['success'])) {
+            echo '<p id="success">Inscription validée</p>';
         }
-    } else if (isset($_GET['success'])) {
-        echo '<p id="success">Inscription validée</p>';
-    }
-    ?>
-    <form method="post" action="../espace_membre/">
-        <label for="pseudo">Username</label>
-        <input type="text" id="pseudo" name="username" required placeholder="Username">
-        <label for="email">Email</label>
-        <input type="text" id="email" name="email" required placeholder="Email">
-        <label for="mdp">Mot de passe</label>
-        <input type="password" id="mdp" name="password" required placeholder="mot de passe">
-        <label for="mdp2">Confirmer mot de passe</label>
-        <input type="password" id="mdp2" name="confirm_password" required placeholder="confirmer le mot de passe">
-        <input type="submit" value="Inscription">
-    </form>
+        ?>
+        <form method="post" action="../espace_membre/">
+            <label for="pseudo">Username</label>
+            <input type="text" id="pseudo" name="username" required placeholder="Username">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" required placeholder="Email">
+            <label for="mdp">Mot de passe</label>
+            <input type="password" id="mdp" name="password" required placeholder="mot de passe">
+            <label for="mdp2">Confirmer mot de passe</label>
+            <input type="password" id="mdp2" name="confirm_password" required placeholder="confirmer le mot de passe">
+            <input type="submit" value="Inscription">
+        </form>
+    <?php } else { ?>
+        <h1>Bonjour <?= $_SESSION['username'] ?></h1>
+        <a href="../espace_membre/logout.php">Déconnexion</a>
+
+    <?php }  ?>
 
 </body>
 

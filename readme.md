@@ -1,36 +1,42 @@
-# Projet PHP - Gestion d'inscription et de connexion
+# Projet PHP - Formulaires de Connexion
 
-Ce projet PHP est conçu pour illustrer les concepts de base de la création d'un système d'inscription et de connexion avec PHP, ainsi que le traitement des données associées.
+Ce projet PHP est conçu pour démontrer la mise en œuvre des fonctionnalités d'inscription, de connexion et de déconnexion d'utilisateurs, en utilisant PHP pour le traitement des données, la gestion des sessions et des cookies, ainsi que PDO pour la connexion à la base de données.
 
 ## Fonctionnalités
 
-- **Inscription des utilisateurs :** Le projet permet aux utilisateurs de s'inscrire en fournissant leur nom d'utilisateur, leur adresse e-mail et leur mot de passe.
-- **Connexion des utilisateurs :** Les utilisateurs peuvent se connecter en fournissant leur nom d'utilisateur et leur mot de passe.
-- **Déconnexion des utilisateurs :** Les utilisateurs connectés peuvent se déconnecter de leur session.
-- **Traitement des données :** Les données fournies lors de l'inscription et de la connexion sont vérifiées et traitées côté serveur pour assurer la sécurité et l'intégrité des données.
+- **Inscription des utilisateurs :** Les utilisateurs peuvent créer un compte en fournissant un pseudo, une adresse e-mail et un mot de passe. Les données sont vérifiées et insérées dans la base de données.
+- **Connexion des utilisateurs :** Les utilisateurs peuvent se connecter en fournissant leur pseudo et leur mot de passe. Les informations sont vérifiées par rapport à la base de données et une session est créée pour l'utilisateur connecté.
+- **Déconnexion des utilisateurs :** Les utilisateurs connectés peuvent se déconnecter de leur session, ce qui supprime les informations de session et les cookies associés.
+- **Utilisation de sessions et de cookies :** Les sessions PHP sont utilisées pour maintenir l'état de connexion de l'utilisateur, tandis que les cookies sont utilisés pour stocker des informations sur l'utilisateur.
+
+## Structure du Projet
+
+Le projet est organisé comme suit :
+
+projet/
+│
+├── index.php # Page d'accueil et de formulaire d'inscription
+├── login.php # Page de connexion
+├── logout.php # Page de déconnexion
+│
+├── src/ # Dossier source pour la connexion PDO à la base de données
+│ └── db.php # Script PHP pour la connexion à la base de données
+│
+└── styles/ # Dossier contenant les fichiers CSS pour la mise en forme
+└── style.css # Feuille de style CSS pour la mise en forme des pages
 
 ## Utilisation
 
 1. Clonez ce dépôt sur votre serveur web local ou distant.
 2. Configurez votre environnement de développement PHP et votre base de données MySQL.
-3. Importez le fichier de la base de données fourni (`database.sql`) pour créer la structure de base de données nécessaire.
-4. Modifiez le fichier `config.php` pour configurer les informations de connexion à la base de données.
-5. Accédez à l'application dans votre navigateur et explorez les fonctionnalités d'inscription, de connexion et de déconnexion.
+3. Importez le fichier de la base de données fourni (`espace_membres.sql`) pour créer la structure de base de données nécessaire.
+4. Modifiez le fichier `src/db.php` pour configurer les informations de connexion à la base de données.
+5. Accédez aux pages `index.php`, `login.php` et `logout.php` dans votre navigateur pour tester les fonctionnalités d'inscription, de connexion et de déconnexion.
 
-## Structure du projet
+## Remarque
 
-- **index.php :** Page d'accueil de l'application avec des liens vers les pages d'inscription et de connexion.
-- **register.php :** Page d'inscription où les utilisateurs peuvent créer un nouveau compte.
-- **login.php :** Page de connexion où les utilisateurs peuvent se connecter à leur compte existant.
-- **logout.php :** Page de déconnexion où les utilisateurs connectés peuvent se déconnecter de leur session.
-- **config.php :** Fichier de configuration contenant les informations de connexion à la base de données.
-- **functions.php :** Fichier contenant des fonctions utilitaires pour la validation et le traitement des données.
-- **database.sql :** Script SQL pour créer la structure de base de données.
-
-## Remarques
-
-Ce projet est conçu à des fins éducatives et peut être étendu avec d'autres fonctionnalités telles que la réinitialisation du mot de passe, la gestion des profils utilisateur, etc.
+Ce projet est destiné à des fins éducatives et peut être étendu avec d'autres fonctionnalités telles que la récupération du mot de passe, la gestion des profils utilisateur, etc.
 
 ---
 
-**Auteur :** [Malick Siguy ](https://github.com/MalicknND)
+**Auteur :** [Malick Siguy NDIAYE](https://github.com/MalicknND)
