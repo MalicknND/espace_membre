@@ -14,16 +14,15 @@ Ce projet PHP est conçu pour démontrer la mise en œuvre des fonctionnalités 
 Le projet est organisé comme suit :
 
 projet/
-│
-├── index.php # Page d'accueil et de formulaire d'inscription
-├── login.php # Page de connexion
-├── logout.php # Page de déconnexion
-│
-├── src/ # Dossier source pour la connexion PDO à la base de données
-│ └── db.php # Script PHP pour la connexion à la base de données
-│
-└── styles/ # Dossier contenant les fichiers CSS pour la mise en forme
-└── style.css # Feuille de style CSS pour la mise en forme des pages
+/index.php : Page d'accueil et de formulaire d'inscription
+/login.php : Page de connexion
+/logout.php : Page de déconnexion
+
+    src/ Dossier source pour la connexion PDO à la base de données
+        db.php : Script PHP pour la connexion à la base de données
+
+    styles/ : Dossier contenant les fichiers CSS pour la mise en forme
+        style.css : Feuille de style CSS pour la mise en forme des pages
 
 ## Utilisation
 
